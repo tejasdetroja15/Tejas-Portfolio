@@ -199,7 +199,7 @@ export default function FullWidthTabs() {
   }
 
   return (
-    <div className="md:px-[10%] px-[5%] w-full sm:mt-0 mt-[3rem] bg-[#030014] overflow-hidden" id="Portofolio">
+    <div id="Projects" className="md:px-[10%] px-[5%] w-full sm:mt-0 mt-[3rem] bg-[#030014] overflow-hidden">
       {/* TEST: Display all projects fetched from Firestore */}
       {/* <div style={{background: '#222', color: '#fff', padding: '1rem', marginBottom: '2rem'}}>
         <h2>Test Firestore Projects Fetch</h2>

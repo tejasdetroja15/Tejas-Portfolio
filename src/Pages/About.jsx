@@ -268,7 +268,7 @@
                 data-aos="fade-right"
                 data-aos-duration="1500"
               >
-                As a passionate Computer Science student at PDEU, I'm deeply immersed in the world of full-stack web development. My journey has been marked by building various projects that bring ideas to life on the web. I've also gained valuable real-world experience through a web developer internship. While I enjoy crafting seamless user experiences, my keenest interest lies in the intricacies of the backend, where I love designing robust and efficient systems.
+                As a passionate Computer Science student at PDEU, I'm deeply immersed in the world of full-stack web development. My journey has been marked by building various projects that bring ideas to life on the web. I've also gained valuable real-world experience through a web developer internship. While I enjoy crafting seamless user experiences. I’m most passionate about exploring the intricacies of backend development, where I love designing robust and efficient systems.
               </p>
 
               <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">

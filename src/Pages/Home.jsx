@@ -187,7 +187,7 @@ const Home = () => {
 
               {/* CTA Buttons */}
               <div className="flex gap-4">
-                <CTAButton href="#Portfolio" text="Projects" icon={ExternalLink} />
+                <CTAButton href="#Projects  " text="Projects" icon={ExternalLink} />
                 <CTAButton href="#Contact" text="Contact" icon={Mail} />
               </div>
 
