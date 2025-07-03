@@ -28,9 +28,19 @@ const CardProject = ({ Img, Title, Description, Link: ProjectLink, id }) => {
       <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-lg border border-white/10 shadow-2xl transition-all duration-300 hover:shadow-purple-500/20">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
         <div className="relative p-5 z-10">
-          <h3 className="text-4xl font-semibold bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 bg-clip-text text-transparent mb-4">
-            {Title}
-          </h3>
+          {id ? (
+            <Link
+              to={`/project/${id}`}
+              onClick={handleDetails}
+              className="text-4xl font-semibold bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 bg-clip-text text-transparent mb-4 cursor-pointer hover:underline"
+            >
+              {Title}
+            </Link>
+          ) : (
+            <h3 className="text-4xl font-semibold bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 bg-clip-text text-transparent mb-4">
+              {Title}
+            </h3>
+          )}
           <div className="relative overflow-hidden rounded-lg aspect-[16/9] bg-black">
             {showIframe && ProjectLink ? (
               <iframe
@@ -75,7 +85,7 @@ const CardProject = ({ Img, Title, Description, Link: ProjectLink, id }) => {
                   <ExternalLink className="w-4 h-4" />
                 </a>
               ) : (
-                <span className="text-gray-500 text-sm">Demo Not Available</span>
+                <span className="text-gray-500 text-sm"></span>
               )}
               
      

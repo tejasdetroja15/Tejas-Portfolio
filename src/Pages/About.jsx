@@ -300,16 +300,26 @@
             <ProfileImage />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 cursor-pointer">
-            {stats.map((stat) => (
-              stat.icon === Globe ? (
-                <div key={stat.label} onClick={() => setShowExperience(true)}>
-                  <StatCard {...stat} />
-                </div>
-              ) : (
-                <StatCard key={stat.label} {...stat} />
-              )
-            ))}
+         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 cursor-pointer">
+            {stats.map((stat) => {
+              if (stat.icon === Globe) {
+                // Experience card opens modal
+                return (
+                  <div key={stat.label} onClick={() => setShowExperience(true)}>
+                    <StatCard {...stat} />
+                  </div>
+                );
+              } else if (stat.label === "Completed Projects") {
+                // Completed Projects card redirects to #Portofolio
+                return (
+                  <a key={stat.label} href="#Portofolio">
+                    <StatCard {...stat} />
+                  </a>
+                );
+              } else {
+                return <StatCard key={stat.label} {...stat} />;
+              }
+            })}
           </div>
         </div>
 
