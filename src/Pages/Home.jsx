@@ -148,7 +148,7 @@ const Home = () => {
             <div className="hidden md:flex space-x-8">
               <a href="#Home" className="text-white hover:text-[#6366f1] transition-colors">Home</a>
               <a href="#About" className="text-gray-400 hover:text-white transition-colors">About</a>
-              <a href="#Portfolio" className="text-gray-400 hover:text-white transition-colors">Portfolio</a>
+              <a href="#Projects" className="text-gray-400 hover:text-white transition-colors">Portfolio</a>
               <a href="#Contact" className="text-gray-400 hover:text-white transition-colors">Contact</a>
             </div>
           </div>
@@ -187,7 +187,7 @@ const Home = () => {
 
               {/* CTA Buttons */}
               <div className="flex gap-4">
-                <CTAButton href="#Projects  " text="Projects" icon={ExternalLink} />
+                <CTAButton href="#Projects" text="Projects" icon={ExternalLink} />
                 <CTAButton href="#Contact" text="Contact" icon={Mail} />
               </div>
 
@@ -250,7 +250,7 @@ const Home = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 justify-center px-4">
-              <CTAButton href="#Portfolio" text="Projects" icon={ExternalLink} />
+              <CTAButton href="#Projects" text="Projects" icon={ExternalLink} />
               <CTAButton href="#Contact" text="Contact" icon={Mail} />
             </div>
 

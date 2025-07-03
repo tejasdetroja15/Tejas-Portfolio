@@ -9,7 +9,7 @@ const Navbar = () => {
     const navItems = [
         { href: "#Home", label: "Home" },
         { href: "#About", label: "About" },
-        { href: "#Portofolio", label: "Portofolio" },
+        { href: "#Projects", label: "Portofolio" },
         { href: "#Contact", label: "Contact" },
     ];
 
@@ -120,47 +120,71 @@ const Navbar = () => {
                 </div>
     
                 {/* Mobile Menu Button */}
-                <div className="md:hidden">
+                <div className="md:hidden flex items-center">
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className={`relative p-2 text-[#e2d3fd] hover:text-white transition-transform duration-300 ease-in-out transform ${
+                        className={`relative p-3 text-white bg-[#6366f1] rounded-full shadow-lg hover:bg-[#a855f7] focus:outline-none focus:ring-2 focus:ring-[#a855f7] transition-transform duration-300 ease-in-out transform ${
                             isOpen ? "rotate-90 scale-125" : "rotate-0 scale-100"
                         }`}
+                        aria-label="Open navigation menu"
                     >
-                        {isOpen ? (
-                            <X className="w-6 h-6" />
+                        {/* Classic Hamburger SVG for extra clarity */}
+                        {!isOpen ? (
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+                                <line x1="4" y1="6" x2="20" y2="6" />
+                                <line x1="4" y1="12" x2="20" y2="12" />
+                                <line x1="4" y1="18" x2="20" y2="18" />
+                            </svg>
                         ) : (
-                            <Menu className="w-6 h-6" />
+                            <X className="w-7 h-7" />
                         )}
                     </button>
                 </div>
             </div>
         </div>
     
-        {/* Mobile Menu Overlay */}
+        {/* Mobile Menu Overlay (Side Drawer) */}
         <div
-            className={`md:hidden h-2/5 fixed inset-0 bg-[#030014] transition-all duration-300 ease-in-out ${
-                isOpen
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-[-100%] pointer-events-none"
+            className={`md:hidden fixed inset-0 z-40 transition-all duration-300 ease-in-out ${
+                isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
             }`}
-            style={{ top: "64px" }}
         >
-            <div className="flex flex-col h-full">
-                <div className="px-4 py-6 space-y-4 flex-1 ">
+            {/* Semi-transparent background */}
+            <div
+                className={`absolute inset-0 bg-black/50 transition-opacity duration-300 ${
+                    isOpen ? "opacity-100" : "opacity-0"
+                }`}
+                onClick={() => setIsOpen(false)}
+            />
+            {/* Side Drawer */}
+            <div
+                className={`absolute top-0 right-0 h-full w-3/4 max-w-xs bg-[#030014] shadow-2xl transform transition-transform duration-300 ease-in-out flex flex-col ${
+                    isOpen ? "translate-x-0" : "translate-x-full"
+                }`}
+            >
+                <div className="flex justify-end p-4">
+                    <button
+                        onClick={() => setIsOpen(false)}
+                        className="text-[#e2d3fd] hover:text-white transition-colors duration-200"
+                        aria-label="Close Menu"
+                    >
+                        <X className="w-6 h-6" />
+                    </button>
+                </div>
+                <div className="flex flex-col space-y-4 px-6 py-4 flex-1">
                     {navItems.map((item, index) => (
                         <a
                             key={item.label}
                             href={item.href}
                             onClick={(e) => scrollToSection(e, item.href)}
-                            className={`block px-4 py-3 text-lg font-medium transition-all duration-300 ease ${
+                            className={`block px-2 py-3 text-lg font-medium transition-all duration-300 ease-in-out rounded-lg ${
                                 activeSection === item.href.substring(1)
                                     ? "bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent font-semibold"
                                     : "text-[#e2d3fd] hover:text-white"
                             }`}
                             style={{
-                                transitionDelay: `${index * 100}ms`,
-                                transform: isOpen ? "translateX(0)" : "translateX(50px)",
+                                transitionDelay: `${index * 80}ms`,
+                                transform: isOpen ? "translateX(0)" : "translateX(40px)",
                                 opacity: isOpen ? 1 : 0,
                             }}
                         >

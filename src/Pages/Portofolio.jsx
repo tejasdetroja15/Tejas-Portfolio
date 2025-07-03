@@ -199,172 +199,174 @@ export default function FullWidthTabs() {
   }
 
   return (
-    <div id="Projects" className="md:px-[10%] px-[5%] w-full sm:mt-0 mt-[3rem] bg-[#030014] overflow-hidden">
-      {/* TEST: Display all projects fetched from Firestore */}
-      {/* <div style={{background: '#222', color: '#fff', padding: '1rem', marginBottom: '2rem'}}>
-        <h2>Test Firestore Projects Fetch</h2>
-        {projects.length === 0 ? (
-          <p>No projects found in Firestore.</p>
-        ) : (
-          projects.map(project => (
-            <div key={project.id} style={{marginBottom: '1rem'}}>
-              <strong>{project.Title}</strong>
-              <div>{project.Description}</div>
-            </div>
-          ))
-        )}
-      </div> */}
+    <div id="Projects">
+      <div id="Portofolio" className="md:px-[10%] px-[5%] w-full sm:mt-0 mt-[3rem] bg-[#030014] overflow-hidden">
+        {/* TEST: Display all projects fetched from Firestore */}
+        {/* <div style={{background: '#222', color: '#fff', padding: '1rem', marginBottom: '2rem'}}>
+          <h2>Test Firestore Projects Fetch</h2>
+          {projects.length === 0 ? (
+            <p>No projects found in Firestore.</p>
+          ) : (
+            projects.map(project => (
+              <div key={project.id} style={{marginBottom: '1rem'}}>
+                <strong>{project.Title}</strong>
+                <div>{project.Description}</div>
+              </div>
+            ))
+          )}
+        </div> */}
 
-      {/* Header section */}
-      <div className="text-center pb-10" data-aos="fade-up" data-aos-duration="1000">
-        <h2 className="inline-block text-3xl md:text-5xl font-bold text-center mx-auto text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">
-          <span style={{
-            color: '#6366f1',
-            backgroundImage: 'linear-gradient(45deg, #6366f1 10%, #a855f7 93%)',
-            WebkitBackgroundClip: 'text',
-            backgroundClip: 'text',
-            WebkitTextFillColor: 'transparent'
-          }}>
-            Portfolio Showcase
-          </span>
-        </h2>
-        <p className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base mt-2">
-          Explore my journey through projects, certifications, and technical expertise. 
-          Each section represents a milestone in my continuous learning path.
-        </p>
-      </div>
+        {/* Header section */}
+        <div className="text-center pb-10" data-aos="fade-up" data-aos-duration="1000">
+          <h2 className="inline-block text-3xl md:text-5xl font-bold text-center mx-auto text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">
+            <span style={{
+              color: '#6366f1',
+              backgroundImage: 'linear-gradient(45deg, #6366f1 10%, #a855f7 93%)',
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              WebkitTextFillColor: 'transparent'
+            }}>
+              Portfolio Showcase
+            </span>
+          </h2>
+          <p className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base mt-2">
+            Explore my journey through projects, certifications, and technical expertise. 
+            Each section represents a milestone in my continuous learning path.
+          </p>
+        </div>
 
-      <Box sx={{ width: "100%" }}>
-        <AppBar
-          position="static"
-          elevation={0}
-          sx={{
-            bgcolor: "transparent",
-            border: "1px solid rgba(255, 255, 255, 0.1)",
-            borderRadius: "20px",
-            position: "relative",
-            overflow: "hidden",
-            "&::before": {
-              content: '""',
-              position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              background: "linear-gradient(180deg, rgba(139, 92, 246, 0.03) 0%, rgba(59, 130, 246, 0.03) 100%)",
-              backdropFilter: "blur(10px)",
-              zIndex: 0,
-            },
-          }}
-          className="md:px-4"
-        >
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            textColor="secondary"
-            indicatorColor="secondary"
-            variant="fullWidth"
+        <Box sx={{ width: "100%" }}>
+          <AppBar
+            position="static"
+            elevation={0}
             sx={{
-              minHeight: "70px",
-              "& .MuiTab-root": {
-                fontSize: { xs: "0.9rem", md: "1rem" },
-                fontWeight: "600",
-                color: "#94a3b8",
-                textTransform: "none",
-                transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                padding: "20px 0",
-                zIndex: 1,
-                margin: "8px",
-                borderRadius: "12px",
-                "&:hover": {
-                  color: "#ffffff",
-                  backgroundColor: "rgba(139, 92, 246, 0.1)",
-                  transform: "translateY(-2px)",
-                  "& .lucide": {
-                    transform: "scale(1.1) rotate(5deg)",
-                  },
-                },
-                "&.Mui-selected": {
-                  color: "#fff",
-                  background: "linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2))",
-                  boxShadow: "0 4px 15px -3px rgba(139, 92, 246, 0.2)",
-                  "& .lucide": {
-                    color: "#a78bfa",
-                  },
-                },
-              },
-              "& .MuiTabs-indicator": {
-                height: 0,
-              },
-              "& .MuiTabs-flexContainer": {
-                gap: "8px",
+              bgcolor: "transparent",
+              border: "1px solid rgba(255, 255, 255, 0.1)",
+              borderRadius: "20px",
+              position: "relative",
+              overflow: "hidden",
+              "&::before": {
+                content: '""',
+                position: "absolute",
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                background: "linear-gradient(180deg, rgba(139, 92, 246, 0.03) 0%, rgba(59, 130, 246, 0.03) 100%)",
+                backdropFilter: "blur(10px)",
+                zIndex: 0,
               },
             }}
+            className="md:px-4"
           >
-            <Tab
-              icon={<Code className="mb-2 w-5 h-5 transition-all duration-300" />}
-              label="Projects"
-              {...a11yProps(0)}
-            />
-            <Tab
-              icon={<Layers className="mb-2 w-5 h-5 transition-all duration-300" />}
-              label="Tech Stack"
-              {...a11yProps(1)}
-            />
-          </Tabs>
-        </AppBar>
+            <Tabs
+              value={value}
+              onChange={handleChange}
+              textColor="secondary"
+              indicatorColor="secondary"
+              variant="fullWidth"
+              sx={{
+                minHeight: "70px",
+                "& .MuiTab-root": {
+                  fontSize: { xs: "0.9rem", md: "1rem" },
+                  fontWeight: "600",
+                  color: "#94a3b8",
+                  textTransform: "none",
+                  transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                  padding: "20px 0",
+                  zIndex: 1,
+                  margin: "8px",
+                  borderRadius: "12px",
+                  "&:hover": {
+                    color: "#ffffff",
+                    backgroundColor: "rgba(139, 92, 246, 0.1)",
+                    transform: "translateY(-2px)",
+                    "& .lucide": {
+                      transform: "scale(1.1) rotate(5deg)",
+                    },
+                  },
+                  "&.Mui-selected": {
+                    color: "#fff",
+                    background: "linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2))",
+                    boxShadow: "0 4px 15px -3px rgba(139, 92, 246, 0.2)",
+                    "& .lucide": {
+                      color: "#a78bfa",
+                    },
+                  },
+                },
+                "& .MuiTabs-indicator": {
+                  height: 0,
+                },
+                "& .MuiTabs-flexContainer": {
+                  gap: "8px",
+                },
+              }}
+            >
+              <Tab
+                icon={<Code className="mb-2 w-5 h-5 transition-all duration-300" />}
+                label="Projects"
+                {...a11yProps(0)}
+              />
+              <Tab
+                icon={<Layers className="mb-2 w-5 h-5 transition-all duration-300" />}
+                label="Tech Stack"
+                {...a11yProps(1)}
+              />
+            </Tabs>
+          </AppBar>
 
-        <SwipeableViews
-          axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-          index={value}
-          onChangeIndex={setValue}
-        >
-          <TabPanel value={value} index={0} dir={theme.direction}>
-            <div className="flex flex-col gap-6 pb-[5%]">
-              {displayedProjects.map((project, index) => (
-                <div key={project.id} data-aos="fade-up" data-aos-delay={index * 100}>
-                  <CardProject
-                    Img={project.ImgUrl}
-                    Title={project.Title}
-                    // Description={project.Description}
-                    Link={project.ProjectLink}
-                    id={project.id}
+          <SwipeableViews
+            axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+            index={value}
+            onChangeIndex={setValue}
+          >
+            <TabPanel value={value} index={0} dir={theme.direction}>
+              <div className="flex flex-col gap-6 pb-[5%]">
+                {displayedProjects.map((project, index) => (
+                  <div key={project.id} data-aos="fade-up" data-aos-delay={index * 100}>
+                    <CardProject
+                      Img={project.ImgUrl}
+                      Title={project.Title}
+                      // Description={project.Description}
+                      Link={project.ProjectLink}
+                      id={project.id}
+                    />
+                  </div>
+                ))}
+              </div>
+              {projects.length > initialProjectItems && (
+                <div className="text-center">
+                  <ToggleButton 
+                    onClick={() => toggleShowMore('projects')}
+                    isShowingMore={showAllProjects}
                   />
                 </div>
-              ))}
-            </div>
-            {projects.length > initialProjectItems && (
-              <div className="text-center">
-                <ToggleButton 
-                  onClick={() => toggleShowMore('projects')}
-                  isShowingMore={showAllProjects}
-                />
+              )}
+            </TabPanel>
+            
+            <TabPanel value={value} index={1} dir={theme.direction}>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 pb-[5%]">
+                {displayedTechStack.map((tech, index) => (
+                  <div key={tech.language} data-aos="fade-up" data-aos-delay={index * 100}>
+                    <TechStackIcon
+                      TechStackIcon={tech.icon}
+                      Language={tech.language}
+                    />
+                  </div>
+                ))}
               </div>
-            )}
-          </TabPanel>
-          
-          <TabPanel value={value} index={1} dir={theme.direction}>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 pb-[5%]">
-              {displayedTechStack.map((tech, index) => (
-                <div key={tech.language} data-aos="fade-up" data-aos-delay={index * 100}>
-                  <TechStackIcon
-                    TechStackIcon={tech.icon}
-                    Language={tech.language}
+              {techStacks.length > initialTechItems && (
+                <div className="text-center">
+                  <ToggleButton 
+                    onClick={() => toggleShowMore('techstack')}
+                    isShowingMore={showAllTechStack}
                   />
                 </div>
-              ))}
-            </div>
-            {techStacks.length > initialTechItems && (
-              <div className="text-center">
-                <ToggleButton 
-                  onClick={() => toggleShowMore('techstack')}
-                  isShowingMore={showAllTechStack}
-                />
-              </div>
-            )}
-          </TabPanel>
-        </SwipeableViews>
-      </Box>
+              )}
+            </TabPanel>
+          </SwipeableViews>
+        </Box>
+      </div>
     </div>
   );
 }
