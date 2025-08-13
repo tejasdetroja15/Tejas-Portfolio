@@ -177,7 +177,7 @@ export default function FullWidthTabs() {
 
   if (loading) {
     return (
-      <div className="md:px-[10%] px-[5%] w-full sm:mt-0 mt-[3rem] bg-[#030014] overflow-hidden" id="Portofolio">
+      <div className="md:px-[10%] px-[5%] w-full sm:mt-0 mt-[3rem] bg-[#000000] overflow-hidden" id="Portofolio">
         <div className="text-center pb-10" data-aos="fade-up" data-aos-duration="1000">
           <h2 className="inline-block text-3xl md:text-5xl font-bold text-center mx-auto text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">
             <span style={{
@@ -200,7 +200,7 @@ export default function FullWidthTabs() {
 
   return (
     <div id="Projects">
-      <div id="Portofolio" className="md:px-[10%] px-[5%] w-full sm:mt-0 mt-[3rem] bg-[#030014] overflow-hidden">
+      <div id="Portofolio" className="md:px-[10%] px-[5%] w-full sm:mt-0 mt-[3rem] bg-[#000000] overflow-hidden">
         {/* TEST: Display all projects fetched from Firestore */}
         {/* <div style={{background: '#222', color: '#fff', padding: '1rem', marginBottom: '2rem'}}>
           <h2>Test Firestore Projects Fetch</h2>

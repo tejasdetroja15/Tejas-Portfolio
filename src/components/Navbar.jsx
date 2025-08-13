@@ -67,11 +67,11 @@ const Navbar = () => {
 
     return (
         <nav
-        className={`fixed w-full top-0 z-50 transition-all duration-500 ${
+        className={`fixed w-full top-0 z-50 transition-all duration-300 ${
             isOpen
-                ? "bg-[#030014] opacity-100"
+                ? "bg-black"
                 : scrolled
-                ? "bg-[#030014]/50 backdrop-blur-xl"
+                ? "bg-black/80 backdrop-blur-sm"
                 : "bg-transparent"
         }`}
     >
@@ -82,7 +82,7 @@ const Navbar = () => {
                     <a
                         href="#Home"
                         onClick={(e) => scrollToSection(e, "#Home")}
-                        className="text-xl font-bold bg-gradient-to-r from-[#a855f7] to-[#6366f1] bg-clip-text text-transparent"
+                        className="text-xl font-bold text-white"
                     >
                         Tejas Detroja
                     </a>
@@ -101,14 +101,14 @@ const Navbar = () => {
                                 <span
                                     className={`relative z-10 transition-colors duration-300 ${
                                         activeSection === item.href.substring(1)
-                                            ? "bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent font-semibold"
-                                            : "text-[#e2d3fd] group-hover:text-white"
+                                            ? "text-white font-semibold"
+                                            : "text-gray-300 group-hover:text-white"
                                     }`}
                                 >
                                     {item.label}
                                 </span>
                                 <span
-                                    className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#6366f1] to-[#a855f7] transform origin-left transition-transform duration-300 ${
+                                    className={`absolute bottom-0 left-0 w-full h-0.5 bg-white transform origin-left transition-transform duration-300 ${
                                         activeSection === item.href.substring(1)
                                             ? "scale-x-100"
                                             : "scale-x-0 group-hover:scale-x-100"
@@ -123,7 +123,7 @@ const Navbar = () => {
                 <div className="md:hidden flex items-center">
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className={`relative p-3 text-white bg-[#6366f1] rounded-full shadow-lg hover:bg-[#a855f7] focus:outline-none focus:ring-2 focus:ring-[#a855f7] transition-transform duration-300 ease-in-out transform ${
+                        className={`relative p-3 text-black bg-white rounded-full hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-300 transition-transform duration-300 ease-in-out transform ${
                             isOpen ? "rotate-90 scale-125" : "rotate-0 scale-100"
                         }`}
                         aria-label="Open navigation menu"
@@ -158,14 +158,14 @@ const Navbar = () => {
             />
             {/* Side Drawer */}
             <div
-                className={`absolute top-0 right-0 h-full w-3/4 max-w-xs bg-[#030014] shadow-2xl transform transition-transform duration-300 ease-in-out flex flex-col ${
+                className={`absolute top-0 right-0 h-full w-3/4 max-w-xs bg-black shadow-2xl transform transition-transform duration-300 ease-in-out flex flex-col ${
                     isOpen ? "translate-x-0" : "translate-x-full"
                 }`}
             >
                 <div className="flex justify-end p-4">
                     <button
                         onClick={() => setIsOpen(false)}
-                        className="text-[#e2d3fd] hover:text-white transition-colors duration-200"
+                        className="text-gray-300 hover:text-white transition-colors duration-200"
                         aria-label="Close Menu"
                     >
                         <X className="w-6 h-6" />
@@ -179,8 +179,8 @@ const Navbar = () => {
                             onClick={(e) => scrollToSection(e, item.href)}
                             className={`block px-2 py-3 text-lg font-medium transition-all duration-300 ease-in-out rounded-lg ${
                                 activeSection === item.href.substring(1)
-                                    ? "bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent font-semibold"
-                                    : "text-[#e2d3fd] hover:text-white"
+                                    ? "text-white font-semibold"
+                                    : "text-gray-300 hover:text-white"
                             }`}
                             style={{
                                 transitionDelay: `${index * 80}ms`,
